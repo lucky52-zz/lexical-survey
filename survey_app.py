@@ -71,7 +71,7 @@ def show_instructions_page():
     
     if st.button("我已了解，开始测试", type="primary"):
         st.session_state.page = 'survey'
-        st.experimental_rerun() # 立即刷新到下一页
+        st.rerun() # 立即刷新到下一页
 
 def show_survey_page():
     """显示问卷调查页面"""
@@ -108,7 +108,7 @@ def show_survey_page():
                 if st.session_state.current_word_index >= len(word_list):
                     st.session_state.page = 'thank_you'
                 
-                st.experimental_rerun() # 立即刷新
+                st.rerun() # 立即刷新
 
 def show_thank_you_page():
     """显示感谢页面并保存数据"""
@@ -139,3 +139,4 @@ elif st.session_state.page == 'survey':
     show_survey_page()
 elif st.session_state.page == 'thank_you':
     show_thank_you_page()
+
